@@ -15,17 +15,34 @@
   </head>
 
   <body>
-    <!-- Title of the Quiz -->
-    <h1 class="main-tile">Dracu Quiz - Romania General Knowledge</h1>
+    <div class="quiz-body">
+      <!-- Title of the Quiz -->
+      <h1 class="main-tile">Dracu Quiz - Romania General Knowledge</h1>
 
-    <!-- Quiz area; body of the quiz -->
-    <div class="quiz-area"></div>
+<p id="quiz-introduction">Let's test your knowledge about Romania, the home of Count Dracula. Please read the instructions below. Good luck and have fun!</p>
 
-    <div class="score-area"></div>
+      <!-- Quiz area; body of the quiz -->
+      
+      <div id="quiz-instruction">
+        <h2>Instruction</h2>
+        <ol>
+            <li>Once you start, you must finish!</li>
+            <li>Do NOT leave the current browser window or tab.</li>
+            <li>Do NOT reload the page after starting your assessment.</li>
+            <li>There are 10 questions. Once you click on the answer, the correct answer will turn green.
+            <li>Need to answer to all question to finish the Quiz.</li>
+            </li>
+        </ol>
+        <div class="quiz-area"></div>
 
-    <div class="score-area">
-      <p class="score">Correct Answers <span id="correct-score">0</span></p>
-      <p class="score">Incorrect Answers <span id="incorrect-score">0</span></p>
+      <div class="score-area"></div>
+
+      <div class="score-area">
+        <p class="score">Correct Answers <span id="correct-score">0</span></p>
+        <p class="score">
+          Incorrect Answers <span id="incorrect-score">0</span>
+        </p>
+      </div>
     </div>
     <script src="assets/js/script.js"></script>
   </body>

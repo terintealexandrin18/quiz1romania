@@ -5,4 +5,12 @@ body {
     background-position: center center;
     background-size: cover;
     margin: 50px;
+    min-height: 100vh;
+}
+
+.quiz-body {
+    background-color: pink;
+    margin: auto;
+    padding: 2px;
+    width: 80%;
 }
