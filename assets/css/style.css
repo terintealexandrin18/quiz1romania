@@ -1,3 +1,8 @@
 body {
-    background: red;
+    background-color: lightgray;
+    background-image: url("../images/romaniacastel.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin: 50px;
 }
