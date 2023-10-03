@@ -10,4 +10,6 @@ function getAlert() {
     alert("Hello World!");
 }
 
+alert("If you can see me, the JS file has updated.");
+
 rules.addEventListener('click', getAlert);
