@@ -21,9 +21,9 @@
 
 <p id="quiz-introduction">Let's test your knowledge about Romania, the home of Count Dracula. Please read the instructions below. Good luck and have fun!</p>
 
-      <!-- Quiz area; body of the quiz -->
+      <!-- Introduction to the Quiz -->
       <button id="quiz-rules" class="btn">Quiz Instruction</button>
-      <div id="quiz-instruction">
+    <div id="quiz-instruction" class="hide">
         <h2>Instruction</h2>
         <ol>
             <li>Once you start, you must finish!</li>
@@ -33,6 +33,9 @@
             <li>Need to answer to all question to finish the Quiz.</li>
             </li>
         </ol>
+        <button id="close-rules" class="btn">Close Instruction</button>
+    </div>
+    <!-- Username -->
         <div>
             <form id="form-username">
                 <label id="form-name" for="name-field">Enter your name?</label><br>
@@ -40,13 +43,32 @@
                 <button type="button" id="submit" class="btn">Submit</button>
             </form>
         </div>
-        <div>
 
-        </div>
-        <div class="quiz-area"></div>
-<p>This is a test 
-    I can see it 
-</p>
+<div>
+    <button id="start-btn" class="btn">Start Quiz</button>
+</div>
+
+        <!-- Question-->
+<div class="quiz-area"></div>
+
+
+        <!-- Answer buttons-->
+<div class="answer-btn">
+<button class="answer"></button>
+<button class="answer"></button>
+<button class="answer"></button>
+<button class="answer"></button>
+</div>
+
+<!--Controls-->
+<div>
+    <button id="next-btn" class="btn">Next</button>
+</div>
+
+
+        
+
+        
       <div class="score-area"></div>
 
       <div class="score-area">

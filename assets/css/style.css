@@ -9,8 +9,12 @@ body {
 }
 
 .quiz-body {
-    background-color: lightpink;
+    background-color: rgb(210, 182, 255);
     margin: auto;
     padding: 2px;
     width: 80%;
+}
+
+.hide {
+    display: none;
 }
