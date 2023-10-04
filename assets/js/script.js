@@ -5,8 +5,8 @@ const rules = document.getElementById('quiz-rules');
 const noRules = document.getElementById('close-rules');
 const questionContainer = document.getElementById('question-container');
 const quizIntroduction = document.getElementById('quiz-header');
-
-
+const questionQuiz = document.getElementById('questions-quiz');
+const answerButton = document.getElementById('answer-btn');
 const questions = [
     {
         question: 'What is the Romanian capital?',
@@ -16,16 +16,16 @@ const questions = [
             { text: 'Brasov', correct: false },
             { text: 'Bucuresti', correct: true }
         ]
-    }
+    },
     {
         question: 'What is the Romanian currency?',
         answers: [
-            { text: 'Leu', correct: correct },
+            { text: 'Leu', correct: true },
             { text: 'Lev', correct: false },
             { text: 'Romanian franc', correct: false },
             { text: 'Euro', correct: false }
         ]
-    }
+    },
     {
         question: 'What are the colors appearing on the Romanian flag?',
         answers: [
@@ -34,7 +34,7 @@ const questions = [
             { text: 'Red, white and blue', correct: false },
             { text: 'Green, yellow and blue', correct: false }
         ]
-    }
+    },
     {
         question: 'Where do you go if you are in Romania and you want to go to the seaside?',
         answers: [
@@ -43,7 +43,7 @@ const questions = [
             { text: 'Black Sea', correct: true },
             { text: 'White Sea', correct: false }
         ]
-    }
+    },
     {
         question: 'What is the biggest river bordering Romania?',
         answers: [
@@ -52,7 +52,7 @@ const questions = [
             { text: 'Volga', correct: false },
             { text: 'Olt', correct: false }
         ]
-    }
+    },
     {
         question: 'What are the highest mountains in Romania?',
         answers: [
@@ -61,7 +61,7 @@ const questions = [
             { text: 'Himalaya', correct: false },
             { text: 'Carpathians', correct: true }
         ]
-    }
+    },
     {
         question: 'What is Romania code on the internet?',
         answers: [
@@ -70,7 +70,7 @@ const questions = [
             { text: '.ro', correct: true },
             { text: '.rr', correct: false }
         ]
-    }
+    },
     {
         question: 'Which of the following countries is NOT a neighbour of Romania?',
         answers: [
@@ -79,16 +79,16 @@ const questions = [
             { text: 'Hungary', correct: false },
             { text: 'Bulgaria', correct: false }
         ]
-    }
+    },
     {
-        question: 'What is the Romanian capital?',
+        question: 'Which of the following climates is the Romanian one?',
         answers: [
             { text: 'Temperate', correct: true },
             { text: 'Tropical', correct: false },
             { text: 'Mediterranean', correct: false },
             { text: 'Polar', correct: false }
         ]
-    }
+    },
     {
         question: 'What is the highest peak in Romania?',
         answers: [
@@ -100,11 +100,14 @@ const questions = [
     }
 ];
 
-//event listeners fot Start Button, 
+let shuffledQuestions, currentQuestionIndex;
 
+
+//event listeners 
 rules.addEventListener('click', showRules);
 noRules.addEventListener('click', hideRules);
 start.addEventListener('click', startQuiz);
+
 
 // Function Show Rules
 function showRules() {
@@ -121,9 +124,31 @@ function startQuiz() {
     start.classList.add('hide');
     questionContainer.classList.remove('hide');
     quizIntroduction.classList.add('hide');
+    shuffledQuestions = questions.sort(() => Math.random - .5);
+    currentQuestionIndex = 0;
+    setNextQuestion();
 }
 //Function set the nex question
 function setNextQuestion() {
+    appearQuestion(shuffledQuestions[currentQuestionIndex]);
+
+}
+
+function appearQuestion(question) {
+    questionQuiz.innerText = question.question;
+    question.answers.forEach(answer => {
+        const button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('answer');
+        if (answer.correct) {
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener('click', selectAnswer);
+        answerButton.appendChild(button);
+    });
+}
+
+function selectAnswer() {
 
 }
 
