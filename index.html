@@ -1,83 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Quiz about the country Romania. General Romania Quiz."
-    />
+    <meta name="description" content="Quiz about the country Romania. General Romania Quiz." />
     <meta name="keywords" content="quiz, Romania, general quiz about Romania" />
     <link rel="icon" type="image/png" href="assets/images/romaniamap.jpg" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Dracu Quiz</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="quiz-body">
-      <!-- Title of the Quiz -->
-      <h1 class="main-tile">Dracu Quiz - Romania General Knowledge</h1>
+            <div id="quiz-header">
+                <!-- Title of the Quiz -->
+                <h1 class="main-tile">Dracu Quiz - Romania General Knowledge</h1>
+            
+                <p id="quiz-introduction">Let's test your knowledge about Romania, the home of Count Dracula. Please read the
+                    instructions below. Good luck and have fun!</p>
+            
+                <!-- Introduction to the Quiz -->
+                <button id="quiz-rules" class="btn">Quiz Instruction</button>
+                <div id="quiz-instruction" class="hide">
+                    <h2>Instruction</h2>
+                    <ol>
+                        <li>Once you start, you must finish!</li>
+                        <li>Do NOT leave the current browser window or tab.</li>
+                        <li>Do NOT reload the page after starting your assessment.</li>
+                        <li>There are 10 questions. Once you click on the answer, the correct answer will turn green.
+                        <li>Need to answer to all question to finish the Quiz.</li>
+                        </li>
+                    </ol>
+                    <button id="close-rules" class="btn">Close Instruction</button>
+                </div>
+                <!-- Username -->
+                <div>
+                    <form id="form-username">
+                        <label id="form-name" for="name-field">Enter your name?</label><br>
+                        <input type="text" id="name-field" name="fname"><br>
+                        <button type="button" id="submit" class="btn">Submit</button>
+                    </form>
+                </div>
+            </div>
 
-<p id="quiz-introduction">Let's test your knowledge about Romania, the home of Count Dracula. Please read the instructions below. Good luck and have fun!</p>
-
-      <!-- Introduction to the Quiz -->
-      <button id="quiz-rules" class="btn">Quiz Instruction</button>
-    <div id="quiz-instruction" class="hide">
-        <h2>Instruction</h2>
-        <ol>
-            <li>Once you start, you must finish!</li>
-            <li>Do NOT leave the current browser window or tab.</li>
-            <li>Do NOT reload the page after starting your assessment.</li>
-            <li>There are 10 questions. Once you click on the answer, the correct answer will turn green.
-            <li>Need to answer to all question to finish the Quiz.</li>
-            </li>
-        </ol>
-        <button id="close-rules" class="btn">Close Instruction</button>
-    </div>
-    <!-- Username -->
+        <!-- Start button-->
         <div>
-            <form id="form-username">
-                <label id="form-name" for="name-field">Enter your name?</label><br>
-                <input type="text" id="name-field" name="fname"><br>
-                <button type="button" id="submit" class="btn">Submit</button>
-            </form>
+            <button id="start-btn" class="btn">Start Quiz</button>
         </div>
-
-<div>
-    <button id="start-btn" class="btn">Start Quiz</button>
-</div>
-
         <!-- Question-->
-<div class="quiz-area"></div>
+        <div class="quiz-area">
+            <div id="question-container" class="hide">
 
+                <!-- Answer buttons-->
+                <div id="questions-quiz">Questions</div>
+                <div class="answer-btn">
+                    <button class="answer">Answer1 </button>
+                    <button class="answer">Answer2</button>
+                    <button class="answer">Answer3</button>
+                    <button class="answer">Answer4</button>
+                </div>
 
-        <!-- Answer buttons-->
-<div class="answer-btn">
-<button class="answer"></button>
-<button class="answer"></button>
-<button class="answer"></button>
-<button class="answer"></button>
-</div>
-
-<!--Controls-->
-<div>
-    <button id="next-btn" class="btn">Next</button>
-</div>
-
-
-        
-
-        
-      <div class="score-area"></div>
-
-      <div class="score-area">
-        <p class="score">Correct Answers <span id="correct-score">0</span></p>
-        <p class="score">
-          Incorrect Answers <span id="incorrect-score">0</span>
-        </p>
-      </div>
+                <!--Controls-->
+                <div>
+                    <button id="next-btn" class="btn">Next</button>
+                </div>
+                <div class="score-area">
+                    <p class="score">Correct Answers <span id="correct-score">0</span></p>
+                    <p class="score">
+                        Incorrect Answers <span id="incorrect-score">0</span>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="assets/js/script.js"></script>
-  </body>
+</body>
+
 </html>

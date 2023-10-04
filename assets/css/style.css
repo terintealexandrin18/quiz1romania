@@ -18,3 +18,7 @@ body {
 .hide {
     display: none;
 }
+
+.answer-btn {
+    display: grid;
+}
