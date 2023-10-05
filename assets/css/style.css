@@ -22,3 +22,18 @@ body {
 #answer-btn {
     display: grid;
 }
+
+#correct-score {
+    color: lightgreen;
+}
+
+#incorrect-score {
+    color: lightcoral;
+}
+
+.correct {
+    background-color: green;
+}
+
+.wrong {
+    background-color: red;

@@ -8,6 +8,124 @@ const quizIntroduction = document.getElementById('quiz-header');
 const questionQuiz = document.getElementById('questions-quiz');
 const answerButton = document.getElementById('answer-btn');
 const nextButton = document.getElementById('next-btn');
+
+let shuffledQuestions, currentQuestionIndex;
+
+
+//event listeners 
+rules.addEventListener('click', showRules);
+noRules.addEventListener('click', hideRules);
+start.addEventListener('click', startQuiz);
+// function from Web Dev Simplified
+nextButton.addEventListener('click', () => {
+    currentQuestionIndex++;
+    setNextQuestion();
+});
+
+// Function Show Rules
+function showRules() {
+    document.getElementById('quiz-instruction').style.display = 'block';
+}
+
+// Function Hide Rules
+function hideRules() {
+    document.getElementById('quiz-instruction').style.display = 'none';
+}
+
+// Function start the quiz
+function startQuiz() {
+    start.classList.add('hide');
+    questionContainer.classList.remove('hide');
+    quizIntroduction.classList.add('hide');
+    //shuffled - function from Web Dev Simplified
+    shuffledQuestions = questions.sort(() => Math.random() - .5);
+    currentQuestionIndex = 0;
+    setNextQuestion();
+}
+//Function set the nex question
+function setNextQuestion() {
+    // function from Web Dev Simplified
+    resetState();
+    appearQuestion(shuffledQuestions[currentQuestionIndex]);
+
+}
+// function from Web Dev Simplified
+function appearQuestion(question) {
+    questionQuiz.innerText = question.question;
+    question.answers.forEach(answer => {
+        const button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('answer');
+        if (answer.correct) {
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener('click', selectAnswer);
+        answerButton.appendChild(button);
+    });
+}
+// function from Web Dev Simplified
+function resetState() {
+    nextButton.classList.add('hide');
+    while (answerButton.firstChild) {
+        answerButton.removeChild
+            (answerButton.firstChild);
+    }
+}
+
+// function from Web Dev Simplified
+function selectAnswer(event) {
+    const clickAnswer = event.target;
+    const correct = clickAnswer.dataset.correct;
+    setStatusClass(document.body, correct);
+    Array.from(answerButton.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct);
+    });
+    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+        nextButton.classList.remove('hide');
+    } else {
+        start.innerText = 'Restart';
+        start.classList.remove('hide');
+    }
+    if (correct) {
+        incrementCorrectScore();
+    } else {
+        incrementWrongAnswer();
+    }
+}
+// function from Web Dev Simplified
+
+function setStatusClass(element, correct) {
+    clearStatusClass(element);
+    if (correct) {
+        element.classList.add('correct');
+    } else {
+        element.classList.add('wrong');
+    }
+}
+
+function clearStatusClass(element) {
+    element.classList.remove('correct');
+    element.classList.remove('wrong');
+}
+
+//Function Increment Correct Score - Code from CodeInstitute 
+//Score from the current DOM and Increments it by 1
+
+function incrementCorrectScore() {
+    let oldScore = parseInt(document.getElementById('correct-score').innerText);
+    document.getElementById('correct-score').innerText = ++oldScore;
+}
+
+//Function Increment Incorrect Score - Code from CodeInstitute;
+function incrementWrongAnswer() {
+    let oldScore = parseInt(document.getElementById('incorrect-score').innerText);
+    document.getElementById('incorrect-score').innerText = oldScore + 1;
+}
+
+
+
+
+
 const questions = [
     {
         question: 'What is the Romanian capital?',
@@ -100,71 +218,3 @@ const questions = [
         ]
     }
 ];
-
-let shuffledQuestions, currentQuestionIndex;
-
-
-//event listeners 
-rules.addEventListener('click', showRules);
-noRules.addEventListener('click', hideRules);
-start.addEventListener('click', startQuiz);
-
-
-// Function Show Rules
-function showRules() {
-    document.getElementById('quiz-instruction').style.display = 'block';
-}
-
-// Function Hide Rules
-function hideRules() {
-    document.getElementById('quiz-instruction').style.display = 'none';
-}
-
-// Function start the quiz
-function startQuiz() {
-    start.classList.add('hide');
-    questionContainer.classList.remove('hide');
-    quizIntroduction.classList.add('hide');
-    //shuffled - function from Web Dev Simplified
-    shuffledQuestions = questions.sort(() => Math.random - .5);
-    currentQuestionIndex = 0;
-    setNextQuestion();
-}
-//Function set the nex question
-function setNextQuestion() {
-    // function from Web Dev Simplified
-    resetState();
-    appearQuestion(shuffledQuestions[currentQuestionIndex]);
-
-}
-// function from Web Dev Simplified
-function appearQuestion(question) {
-    questionQuiz.innerText = question.question;
-    question.answers.forEach(answer => {
-        const button = document.createElement('button');
-        button.innerText = answer.text;
-        button.classList.add('answer');
-        if (answer.correct) {
-            button.dataset.correct = answer.correct;
-        }
-        button.addEventListener('click', selectAnswer);
-        answerButton.appendChild(button);
-    });
-}
-
-function resetState() {
-    nextButton.classList.add('hide');
-    while (answerButton.firstChild) {
-        answerButton.removeChild
-            (answerButton.firstChild);
-    }
-}
-
-function selectAnswer() {
-
-}
-
-//Function Answert
-function chooseAnswer() {
-
-}
