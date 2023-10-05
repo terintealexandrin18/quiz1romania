@@ -19,6 +19,6 @@ body {
     display: none;
 }
 
-.answer-btn {
+#answer-btn {
     display: grid;
 }

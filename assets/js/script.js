@@ -7,6 +7,7 @@ const questionContainer = document.getElementById('question-container');
 const quizIntroduction = document.getElementById('quiz-header');
 const questionQuiz = document.getElementById('questions-quiz');
 const answerButton = document.getElementById('answer-btn');
+const nextButton = document.getElementById('next-btn');
 const questions = [
     {
         question: 'What is the Romanian capital?',
@@ -124,16 +125,19 @@ function startQuiz() {
     start.classList.add('hide');
     questionContainer.classList.remove('hide');
     quizIntroduction.classList.add('hide');
+    //shuffled - function from Web Dev Simplified
     shuffledQuestions = questions.sort(() => Math.random - .5);
     currentQuestionIndex = 0;
     setNextQuestion();
 }
 //Function set the nex question
 function setNextQuestion() {
+    // function from Web Dev Simplified
+    resetState();
     appearQuestion(shuffledQuestions[currentQuestionIndex]);
 
 }
-
+// function from Web Dev Simplified
 function appearQuestion(question) {
     questionQuiz.innerText = question.question;
     question.answers.forEach(answer => {
@@ -146,6 +150,14 @@ function appearQuestion(question) {
         button.addEventListener('click', selectAnswer);
         answerButton.appendChild(button);
     });
+}
+
+function resetState() {
+    nextButton.classList.add('hide');
+    while (answerButton.firstChild) {
+        answerButton.removeChild
+            (answerButton.firstChild);
+    }
 }
 
 function selectAnswer() {
