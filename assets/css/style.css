@@ -24,11 +24,11 @@ body {
 }
 
 #correct-score {
-    color: lightgreen;
+    color: green;
 }
 
 #incorrect-score {
-    color: lightcoral;
+    color: red;
 }
 
 .correct {

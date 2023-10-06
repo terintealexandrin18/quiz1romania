@@ -10,7 +10,7 @@ const answerButton = document.getElementById('answer-btn');
 const nextButton = document.getElementById('next-btn');
 
 let shuffledQuestions, currentQuestionIndex;
-
+let hasAnswered = false;  
 
 //event listeners 
 rules.addEventListener('click', showRules);
@@ -65,6 +65,7 @@ function appearQuestion(question) {
 }
 // function from Web Dev Simplified
 function resetState() {
+    clearStatusClass(document.body);
     nextButton.classList.add('hide');
     while (answerButton.firstChild) {
         answerButton.removeChild
@@ -74,12 +75,14 @@ function resetState() {
 
 // function from Web Dev Simplified
 function selectAnswer(event) {
-    const clickAnswer = event.target;
+        const clickAnswer = event.target;
     const correct = clickAnswer.dataset.correct;
     setStatusClass(document.body, correct);
     Array.from(answerButton.children).forEach(button => {
         setStatusClass(button, button.dataset.correct);
-    });
+        button.removeEventListener('click', selectAnswer); // Increment the score once even if click multiple times.
+        });
+      
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide');
     } else {
@@ -90,7 +93,10 @@ function selectAnswer(event) {
         incrementCorrectScore();
     } else {
         incrementWrongAnswer();
-    }
+    }  
+    hasAnswered = true;  
+    
+    
 }
 // function from Web Dev Simplified
 
