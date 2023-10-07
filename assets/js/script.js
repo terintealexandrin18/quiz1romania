@@ -8,9 +8,11 @@ const quizIntroduction = document.getElementById('quiz-header');
 const questionQuiz = document.getElementById('questions-quiz');
 const answerButton = document.getElementById('answer-btn');
 const nextButton = document.getElementById('next-btn');
-
+const endOfQuiz = document.getElementById('for-final-score');
 let shuffledQuestions, currentQuestionIndex;
-let hasAnswered = false;  
+let hasAnswered = false;
+let quizScore = document.getElementById('final-score');
+let score = 0;
 
 //event listeners 
 rules.addEventListener('click', showRules);
@@ -75,28 +77,26 @@ function resetState() {
 
 // function from Web Dev Simplified
 function selectAnswer(event) {
-        const clickAnswer = event.target;
+    const clickAnswer = event.target;
     const correct = clickAnswer.dataset.correct;
     setStatusClass(document.body, correct);
+    if (correct) score++;
     Array.from(answerButton.children).forEach(button => {
         setStatusClass(button, button.dataset.correct);
         button.removeEventListener('click', selectAnswer); // Increment the score once even if click multiple times.
-        });
-      
+    });
+
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide');
     } else {
-        start.innerText = 'Restart';
-        start.classList.remove('hide');
+        finishQuiz();
     }
     if (correct) {
         incrementCorrectScore();
     } else {
         incrementWrongAnswer();
-    }  
-    hasAnswered = true;  
-    
-    
+    }
+    hasAnswered = true;
 }
 // function from Web Dev Simplified
 
@@ -128,9 +128,22 @@ function incrementWrongAnswer() {
     document.getElementById('incorrect-score').innerText = oldScore + 1;
 }
 
-
-
-
+function finishQuiz() {
+    quizScore.classList.remove('hide');
+    endOfQuiz.classList.add('hide');
+    if (score >= 9) {
+        document.getElementById('final-score').innerHTML = `Congratulations! You have amazing knowledge about Romania. You answered ${score} out of 10 questions correctly.`;
+    }
+    else if (score >= 7 && score <= 8) {
+        document.getElementById('final-score').innerHTML = `Congratulations! You have good knowledge about Romania. You answered ${score} out of 10 questions correctly.`;
+    }
+    else if (score >= 5 && score <= 6) {
+        document.getElementById('final-score').innerHTML = `Congratulations! You have basic knowledge about Romania. You answered ${score} out of 10 questions correctly.`;
+    }
+    else {
+        document.getElementById('final-score').innerHTML = `Sorry you didn't pass the basic Romania Quiz. You answered ${score} out of 10 questions correctly.`;
+    }
+}
 
 const questions = [
     {
