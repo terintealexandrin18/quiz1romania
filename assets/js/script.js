@@ -131,6 +131,10 @@ function incrementWrongAnswer() {
 function finishQuiz() {
     quizScore.classList.remove('hide');
     endOfQuiz.classList.add('hide');
+    questionQuiz.classList.add('hide');
+    answerButton.removeAttribute('id');
+    answerButton.classList.add('hide');
+
     if (score >= 9) {
         document.getElementById('final-score').innerHTML = `Congratulations! You have amazing knowledge about Romania. You answered ${score} out of 10 questions correctly.`;
     }
