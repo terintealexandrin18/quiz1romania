@@ -14,40 +14,43 @@
 
 <body>
     <div class="quiz-body">
-            <div id="quiz-header">
-                <!-- Title of the Quiz -->
-                <h1 class="main-tile">Dracu Quiz - Romania General Knowledge</h1>
-            
-                <p id="quiz-introduction">Let's test your knowledge about Romania, the home of Count Dracula. Please read the
-                    instructions below. Good luck and have fun!</p>
-            
-                <!-- Introduction to the Quiz -->
-                <button id="quiz-rules" class="btn">Quiz Instruction</button>
-                <div id="quiz-instruction" class="hide">
-                    <h2>Instruction</h2>
-                    <ol>
-                        <li>Once you start, you must finish!</li>
-                        <li>Do NOT leave the current browser window or tab.</li>
-                        <li>Do NOT reload the page after starting your assessment.</li>
-                        <li>There are 10 questions. Once you click on the answer, the correct answer will turn green.
-                        <li>Need to answer to all question to finish the Quiz.</li>
-                        </li>
-                    </ol>
-                    <button id="close-rules" class="btn">Close Instruction</button>
-                </div>
-                <!-- Username -->
-                <div>
-                    <form id="form-username">
-                        <label id="form-name" for="name-field">Enter your name?</label><br>
-                        <input type="text" id="name-field" name="fname"><br>
-                        <button type="button" id="submit" class="btn">Submit</button>
-                    </form>
-                </div>
+        <div id="quiz-header">
+            <!-- Title of the Quiz -->
+            <h1 class="main-tile">Dracu Quiz - Romania General Knowledge</h1>
+
+            <p id="quiz-introduction">Let's test your knowledge about Romania, the home of Count Dracula. Please read
+                the
+                instructions below. Good luck and have fun!</p>
+
+            <!-- Introduction to the Quiz -->
+            <button id="quiz-rules" class="btn">Quiz Instruction</button>
+            <div id="quiz-instruction" class="hide">
+                <h2>Instruction</h2>
+                <ol>
+                    <li>Once you start, you must finish!</li>
+                    <li>Do NOT leave the current browser window or tab.</li>
+                    <li>Do NOT reload the page after starting your assessment.</li>
+                    <li>There are 10 questions. Once you click on the answer, the correct answer will turn green.
+                    <li>Need to answer to all question to finish the Quiz.</li>
+                    </li>
+                </ol>
+                <button id="close-rules" class="btn">Close Instruction</button>
             </div>
+            <!-- Username -->
+            <div>
+                <form id="form-username">
+                    <label id="form-name" for="name-field">Enter your name?</label><br>
+                    <input type="text" id="namefield" name="namefield" required><br>
+                    <button type="submit" id="submit" class="btn">Submit</button>
+                </form>
+                    <p id="username-rule" class="hide"></p>                                 
+            </div>
+        </div>
 
         <!-- Start button-->
+        <div id="output"></div>
         <div>
-            <button id="start-btn" class="btn">Start Quiz</button>
+            <button id="start-btn" class="hide">Start the Quiz</button>
         </div>
         <!-- Question-->
         <div class="quiz-area">
@@ -70,7 +73,10 @@
                     <p class="score">Correct Answers <span id="correct-score">0</span></p>
                     <p class="score">Incorrect Answers <span id="incorrect-score">0</span></p>
                 </div>
-                <div><p id="final-score" class="hide"></p></div>
+                <div>
+                    <p id="final-score" class="hide"></p>
+                    <button id="restart" class="hide">Restart Quiz</button>
+                </div>
             </div>
         </div>
     </div>

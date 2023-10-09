@@ -9,6 +9,10 @@ const questionQuiz = document.getElementById('questions-quiz');
 const answerButton = document.getElementById('answer-btn');
 const nextButton = document.getElementById('next-btn');
 const endOfQuiz = document.getElementById('for-final-score');
+const restartBtn = document.getElementById('restart');
+const outputUsername = document.getElementById('output');
+const formUsername = document.getElementById('form-username');
+
 let shuffledQuestions, currentQuestionIndex;
 let hasAnswered = false;
 let quizScore = document.getElementById('final-score');
@@ -18,6 +22,9 @@ let score = 0;
 rules.addEventListener('click', showRules);
 noRules.addEventListener('click', hideRules);
 start.addEventListener('click', startQuiz);
+restartBtn.addEventListener('click', restartQuiz);
+
+
 // function from Web Dev Simplified
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++;
@@ -34,8 +41,22 @@ function hideRules() {
     document.getElementById('quiz-instruction').style.display = 'none';
 }
 
+// Function for username
+const output = document.getElementById('output');
+formUsername.addEventListener('submit', function (event) {
+    event.preventDefault();
+    const usernameInput = document.getElementById('namefield');
+    const username = usernameInput.value;
+    output.innerHTML = `${username}: please press the button below to begin the quiz.`;
+    start.classList.remove('hide');
+    formUsername.classList.add('hide');
+});
+
+
+
 // Function start the quiz
 function startQuiz() {
+    outputUsername.classList.add('hide');
     start.classList.add('hide');
     questionContainer.classList.remove('hide');
     quizIntroduction.classList.add('hide');
@@ -134,9 +155,11 @@ function finishQuiz() {
     questionQuiz.classList.add('hide');
     answerButton.removeAttribute('id');
     answerButton.classList.add('hide');
+    restartBtn.classList.remove('hide');
+
 
     if (score >= 9) {
-        document.getElementById('final-score').innerHTML = `Congratulations! You have amazing knowledge about Romania. You answered ${score} out of 10 questions correctly.`;
+        document.getElementById('final-score').innerHTML = `Congratulations! ${usernameInput} You have amazing knowledge about Romania. You answered ${score} out of 10 questions correctly.`;
     }
     else if (score >= 7 && score <= 8) {
         document.getElementById('final-score').innerHTML = `Congratulations! You have good knowledge about Romania. You answered ${score} out of 10 questions correctly.`;
@@ -147,6 +170,11 @@ function finishQuiz() {
     else {
         document.getElementById('final-score').innerHTML = `Sorry you didn't pass the basic Romania Quiz. You answered ${score} out of 10 questions correctly.`;
     }
+}
+
+function restartQuiz() {
+    location.reload();
+
 }
 
 const questions = [
