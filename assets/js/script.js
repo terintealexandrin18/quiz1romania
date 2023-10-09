@@ -123,7 +123,8 @@ function selectAnswer(event) {
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide');
     } else {
-        finishQuiz();
+
+        setTimeout(finishQuiz, 6000); // Add time for the user to check the last answers.
     }
     if (correct) {
         incrementCorrectScore();
