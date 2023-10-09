@@ -12,7 +12,8 @@ const endOfQuiz = document.getElementById('for-final-score');
 const restartBtn = document.getElementById('restart');
 const outputUsername = document.getElementById('output');
 const formUsername = document.getElementById('form-username');
-
+let rulesForUsername = document.getElementById('username-rule');
+let currentQuestionNumber = document.getElementById('question-number');
 let shuffledQuestions, currentQuestionIndex;
 let hasAnswered = false;
 let quizScore = document.getElementById('final-score');
@@ -45,11 +46,22 @@ function hideRules() {
 const output = document.getElementById('output');
 formUsername.addEventListener('submit', function (event) {
     event.preventDefault();
-    const usernameInput = document.getElementById('namefield');
-    const username = usernameInput.value;
+    var usernameInput = document.getElementById('namefield');
+    var username = usernameInput.value.trim(); // Trim removes the blank/empty spaces
     output.innerHTML = `${username}: please press the button below to begin the quiz.`;
     start.classList.remove('hide');
     formUsername.classList.add('hide');
+    rulesForUsername.classList.add('hide');
+    outputUsername.classList.remove('hide');
+    if (username === '') {
+
+        event.preventDefault(); // Prevent the form from submitting
+        rulesForUsername.classList.remove('hide');
+        start.classList.add('hide');
+        document.getElementById('username-rule').innerHTML = `It appears that the username field is currently blank. Kindly type in a username to proceed.`;
+        formUsername.classList.remove('hide');
+        outputUsername.classList.add('hide');
+    }
 });
 
 
@@ -70,6 +82,7 @@ function setNextQuestion() {
     // function from Web Dev Simplified
     resetState();
     appearQuestion(shuffledQuestions[currentQuestionIndex]);
+    quizCounter(); // Update the displayed question number
 
 }
 // function from Web Dev Simplified
@@ -149,6 +162,14 @@ function incrementWrongAnswer() {
     document.getElementById('incorrect-score').innerText = oldScore + 1;
 }
 
+// Function Show Question number
+function quizCounter() {
+    const totalQuestions = questions.length;
+    displayedQuestionNumber = currentQuestionIndex + 1;
+    currentQuestionNumber.textContent = `Question ${displayedQuestionNumber} of ${totalQuestions}`;
+
+}
+
 function finishQuiz() {
     quizScore.classList.remove('hide');
     endOfQuiz.classList.add('hide');
@@ -156,21 +177,24 @@ function finishQuiz() {
     answerButton.removeAttribute('id');
     answerButton.classList.add('hide');
     restartBtn.classList.remove('hide');
+    var usernameInput = document.getElementById('namefield');
+    var username = usernameInput.value;
 
 
     if (score >= 9) {
-        document.getElementById('final-score').innerHTML = `Congratulations! ${usernameInput} You have amazing knowledge about Romania. You answered ${score} out of 10 questions correctly.`;
+        document.getElementById('final-score').innerHTML = `Congratulations! ${username} You have amazing knowledge about Romania. You answered ${score} out of 10 questions correctly.`;
     }
     else if (score >= 7 && score <= 8) {
-        document.getElementById('final-score').innerHTML = `Congratulations! You have good knowledge about Romania. You answered ${score} out of 10 questions correctly.`;
+        document.getElementById('final-score').innerHTML = `Congratulations! ${username} You have good knowledge about Romania. You answered ${score} out of 10 questions correctly.`;
     }
     else if (score >= 5 && score <= 6) {
-        document.getElementById('final-score').innerHTML = `Congratulations! You have basic knowledge about Romania. You answered ${score} out of 10 questions correctly.`;
+        document.getElementById('final-score').innerHTML = `Congratulations! ${username} You have basic knowledge about Romania. You answered ${score} out of 10 questions correctly.`;
     }
     else {
-        document.getElementById('final-score').innerHTML = `Sorry you didn't pass the basic Romania Quiz. You answered ${score} out of 10 questions correctly.`;
+        document.getElementById('final-score').innerHTML = `Sorry ${username} You didn't pass the basic Romania Quiz. You answered ${score} out of 10 questions correctly.`;
     }
 }
+//Function Restart 
 
 function restartQuiz() {
     location.reload();
