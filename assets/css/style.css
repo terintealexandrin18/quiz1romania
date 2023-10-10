@@ -24,6 +24,10 @@ h1 {
     display: none;
 }
 
+#quiz-introduction {
+    text-align: center;
+}
+
 #answer-btn {
     display: grid;
 }
@@ -46,7 +50,16 @@ h1 {
 
 .btn {
     background-color: #F1F6F6;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
+.answer {
+    border-radius: 10px/20px;
 }
 
 @media only screen and (max-width: 412px) {
@@ -54,16 +67,32 @@ h1 {
     .btn {
         border-radius: 10px;
     }
+
+    #quiz-instruction {
+        text-align: left;
+        list-style-position: inside;
+    }
+
 }
 
 @media only screen and (min-width: 412px) {
     .btn {
         border-radius: 15px 50px;
     }
+
+    #quiz-instruction {
+        text-align: center;
+        list-style-position: inside;
+    }
 }
 
 @media only screen and (min-width: 768px) {
     .btn {
         border-radius: 15px 50px;
+    }
+
+    #quiz-instruction {
+        text-align: center;
+        list-style-position: inside;
     }
 }
