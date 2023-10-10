@@ -8,8 +8,13 @@ body {
     min-height: 100vh;
 }
 
+h1 {
+    color: #F5F7F3;
+    text-align: center;
+}
+
 .quiz-body {
-    background-color: rgb(210, 182, 255);
+    background-color: #E16F00;
     margin: auto;
     padding: 2px;
     width: 80%;
@@ -37,4 +42,28 @@ body {
 
 .wrong {
     background-color: red;
+}
+
+.btn {
+    background-color: #F1F6F6;
+
+}
+
+@media only screen and (max-width: 412px) {
+
+    .btn {
+        border-radius: 10px;
+    }
+}
+
+@media only screen and (min-width: 412px) {
+    .btn {
+        border-radius: 15px 50px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .btn {
+        border-radius: 15px 50px;
+    }
 }
