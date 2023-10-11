@@ -6,6 +6,7 @@ body {
     background-size: cover;
     margin: 50px;
     min-height: 100vh;
+    text-align: center;
 }
 
 h1 {
@@ -48,21 +49,34 @@ h1 {
     background-color: red;
 }
 
-.btn {
-    background-color: #F1F6F6;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
 
 .answer {
     border-radius: 10px/20px;
 }
 
+/* Button Style */
+
+#start-btn,
+#next-btn,
+#restart {
+    background-color: #762500;
+    color: #F1F6F6;
+}
+
+.btn {
+    background-color: #762500;
+    color: #F1F6F6;
+}
+
 @media only screen and (max-width: 412px) {
+
+    /* Buttons style */
+
+    #start-btn,
+    #next-btn,
+    #restart {
+        border-radius: 10px;
+    }
 
     .btn {
         border-radius: 10px;
@@ -76,23 +90,72 @@ h1 {
 }
 
 @media only screen and (min-width: 412px) {
-    .btn {
-        border-radius: 15px 50px;
-    }
 
     #quiz-instruction {
         text-align: center;
         list-style-position: inside;
     }
+
+    /* Buttons style */
+
+    #start-btn,
+    #next-btn,
+    #restart {
+        border-radius: 15px 50px;
+    }
+
+    .btn {
+        border-radius: 15px 50px;
+    }
+
 }
 
 @media only screen and (min-width: 768px) {
-    .btn {
-        border-radius: 15px 50px;
-    }
 
     #quiz-instruction {
         text-align: center;
         list-style-position: inside;
     }
+
+    /* Buttons style */
+
+    #start-btn,
+    #next-btn,
+    #restart {
+        border-radius: 15px 50px;
+    }
+
+    .btn {
+        border-radius: 15px 50px;
+    }
+
+    .btn:hover {
+        background-color: #315D44;
+    }
+
+    .btn:active {
+        background-color: #315D44;
+        box-shadow: 0 5px #F1F6F6;
+        transform: translateY(4px);
+    }
+
+    #start-btn:hover,
+    #next-btn:hover,
+    #restart:hover {
+        background-color: #315D44;
+    }
+
+    #start-btn:active,
+    #next-btn:active,
+    #restart:active {
+        background-color: #315D44;
+        box-shadow: 0 5px #F1F6F6;
+        transform: translateY(4px);
+    }
+
+    .answer:hover {
+        background: linear-gradient(90deg, red, yellow, blue);
+    }
+
+
 }

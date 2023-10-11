@@ -170,7 +170,7 @@ function quizCounter() {
     currentQuestionNumber.textContent = `Question ${displayedQuestionNumber} of ${totalQuestions}`;
 
 }
-
+// to add comment 
 function finishQuiz() {
     quizScore.classList.remove('hide');
     endOfQuiz.classList.add('hide');
