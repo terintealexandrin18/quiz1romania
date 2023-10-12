@@ -1,3 +1,6 @@
+/* Import from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=MedievalSharp&family=Permanent+Marker&family=Short+Stack&display=swap');
+
 body {
     background-color: lightgray;
     background-image: url("../images/romaniacastel.jpg");
@@ -7,11 +10,13 @@ body {
     margin: 50px;
     min-height: 100vh;
     text-align: center;
+    font-family: 'Indie Flower', cursive;
 }
 
 h1 {
     color: #F5F7F3;
     text-align: center;
+    font-family: 'MedievalSharp', cursive;
 }
 
 .quiz-body {
@@ -36,6 +41,7 @@ h1 {
 
 #answer-btn {
     display: grid;
+    font-family: 'Indie Flower', cursive;
 }
 
 #correct-score {
@@ -55,8 +61,11 @@ h1 {
 }
 
 
-.answer {
-    border-radius: 10px/20px;
+
+
+/* Form username */
+#namefield {
+    text-align: center;
 }
 
 /* Button Style */
@@ -66,103 +75,151 @@ h1 {
 #restart {
     background-color: #762500;
     color: #F1F6F6;
+    font-family: 'Short Stack', cursive;
 }
 
 .btn {
     background-color: #762500;
     color: #F1F6F6;
+    font-family: 'Short Stack', cursive;
+}
+
+.answer {
+    border-radius: 10px/20px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 25px;
+    font-weight: 700;
 }
 
 @media only screen and (max-width: 412px) {
+
+    /* Quiz Body  */
+    .quiz-body {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    /* Form username */
+    #namefield {
+        width: 90%;
+    }
+
     /* Buttons style */
+    .answer {
+        font-size: 17px;
+        font-weight: 600;
+    }
 
     #start-btn,
     #next-btn,
-    #restart {
+    #restart,
+    #namefield {
         border-radius: 10px;
+        font-size: 16px;
     }
 
     .btn {
         border-radius: 10px;
+        font-size: 16px;
     }
 
+}
+
+
+@media only screen and (min-width: 412px) {
 
     /* Quiz Body  */
     .quiz-body {
-        width: 95%;
+        width: 85%;
+        font-size: 1.5em;
+    }
+
+    /* Form username */
+    #namefield {
+        width: 60%;
+    }
+
+    /* Buttons style */
+    .answer {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    #start-btn,
+    #next-btn,
+    #restart,
+    #namefield {
+        border-radius: 15px 50px;
         font-size: 20px;
     }
 
-    @media only screen and (min-width: 412px) {
-
-
-        /* Buttons style */
-
-        #start-btn,
-        #next-btn,
-        #restart {
-            border-radius: 15px 50px;
-        }
-
-        .btn {
-            border-radius: 15px 50px;
-        }
-
-        /* Quiz Body  */
-        .quiz-body {
-            width: 85%;
-            font-size: 1.5em;
-        }
-
+    .btn {
+        border-radius: 15px 50px;
+        font-size: 20px;
     }
 
-    @media only screen and (min-width: 768px) {
 
 
-        /* Buttons style */
+}
 
-        #start-btn,
-        #next-btn,
-        #restart {
-            border-radius: 15px 50px;
-        }
+@media only screen and (min-width: 768px) {
+    /* Quiz Body  */
 
-        .btn {
-            border-radius: 15px 50px;
-        }
-
-        .btn:hover {
-            background-color: #315D44;
-        }
-
-        .btn:active {
-            background-color: #315D44;
-            box-shadow: 0 5px #F1F6F6;
-            transform: translateY(4px);
-        }
-
-        #start-btn:hover,
-        #next-btn:hover,
-        #restart:hover {
-            background-color: #315D44;
-        }
-
-        #start-btn:active,
-        #next-btn:active,
-        #restart:active {
-            background-color: #315D44;
-            box-shadow: 0 5px #F1F6F6;
-            transform: translateY(4px);
-        }
-
-        .answer:hover {
-            background: linear-gradient(90deg, red, yellow, blue);
-        }
-
-        /* Quiz Body  */
-        .quiz-body {
-            width: 70%;
-            font-size: 2em;
-        }
-
+    .quiz-body {
+        width: 70%;
+        font-size: 2em;
     }
+
+    /* Form username */
+    #namefield {
+        width: 55%;
+    }
+
+    /* Buttons style */
+    .answer {
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    #start-btn,
+    #next-btn,
+    #restart,
+    #namefield {
+        border-radius: 15px 50px;
+        font-size: 1em;
+    }
+
+    .btn {
+        border-radius: 15px 50px;
+        font-size: 1em;
+    }
+
+    .btn:hover {
+        background-color: #315D44;
+    }
+
+    .btn:active {
+        background-color: #315D44;
+        box-shadow: 0 5px #F1F6F6;
+        transform: translateY(4px);
+    }
+
+    #start-btn:hover,
+    #next-btn:hover,
+    #restart:hover {
+        background-color: #315D44;
+    }
+
+    #start-btn:active,
+    #next-btn:active,
+    #restart:active {
+        background-color: #315D44;
+        box-shadow: 0 5px #F1F6F6;
+        transform: translateY(4px);
+    }
+
+    .answer:hover {
+        background: linear-gradient(90deg, red, yellow, blue);
+    }
+
+}
