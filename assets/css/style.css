@@ -18,6 +18,9 @@ h1 {
     text-align: center;
     font-family: 'MedievalSharp', cursive;
     font-size: 2em;
+    text-transform: uppercase;
+
+
 }
 
 .quiz-body {
@@ -25,9 +28,9 @@ h1 {
     margin: auto;
     padding: 2px;
     width: 60%;
+    box-shadow: inset 0px 0px 120px #f1f6f6;
+    border-radius: 40px;
 }
-
-
 
 .hide {
     display: none;
@@ -181,10 +184,12 @@ h1 {
 
 
     /* Buttons style */
+
+
     .answer {
         font-size: 25px;
         font-weight: 700;
-        animation: 5s anim-lineUp ease-out;
+        animation: 2.5s anim-lineUp ease-out;
     }
 
     #start-btn,
@@ -222,10 +227,6 @@ h1 {
         background-color: #315D44;
         box-shadow: 0 5px #F1F6F6;
         transform: translateY(4px);
-    }
-
-    .answer:hover {
-        background: linear-gradient(90deg, red, yellow, blue);
     }
 
     /* Code to show the questions and answers line up*/
