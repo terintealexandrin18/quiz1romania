@@ -292,5 +292,98 @@ const questions = [
             { text: 'Moldoveanu', correct: true },
             { text: 'Rodna', correct: false }
         ]
-    }
+    },
+    {
+        question: 'To which of these is the Romanian language closest?',
+        answers: [
+            { text: '', correct: false },
+            { text: '', correct: false },
+            { text: '', correct: true },
+            { text: '', correct: false }
+        ]
+    },
+    {
+        question: 'The fabled Count Dracula portrayed in Bram Stokers famous tale is actually based on a Romanian ruler.His name was: ',
+        answers: [
+            { text: '', correct: false },
+            { text: '', correct: false },
+            { text: '', correct: true },
+            { text: '', correct: false }
+        ]
+    },
+    {
+        question: 'In which Castle from Romania was Wednesday filmed?',
+        answers: [
+            { text: 'Bran Castle in Brasov', correct: false },
+            { text: 'Peles Castle in Sinaia', correct: false },
+            { text: 'Cantacuzino Castle in Busteni', correct: true },
+            { text: 'Corvin Castle in Hunedoara', correct: false }
+        ]
+    },
+    {
+        question: 'Who is a Romanian gymnast, born in the region of Moldavia, performing the floor exercise at the 1976 Olympic Games in Montreal and was first in obtaining the perfect score, 10?',
+        answers: [
+            { text: 'Teodora Ungureanu', correct: false },
+            { text: 'Nadia Comaneci', correct: true },
+            { text: 'Daniela Silivas', correct: false },
+            { text: 'Simona Halep', correct: false }
+        ]
+    },
+    {
+        question: 'When did Romania get the membership of the European Union?',
+        answers: [
+            { text: '2000', correct: false },
+            { text: '1996', correct: false },
+            { text: '2006', correct: false },
+            { text: '2007', correct: true }
+        ]
+    },
+    {
+        question: 'What is the most practicing religion in Romania?',
+        answers: [
+            { text: 'Orthodoxy', correct: true },
+            { text: 'Catholicism', correct: false },
+            { text: 'Protestantism', correct: false },
+            { text: 'Islam', correct: false }
+        ]
+    },
+    {
+        question: 'What is the oldest Monastery in Romania',
+        answers: [
+            { text: 'Sucevita Monastery', correct: false },
+            { text: 'Neamt Monastery', correct: true },
+            { text: 'Voronet Monastery', correct: false },
+            { text: 'Putna Monastery', correct: false }
+        ]
+    },
+    {
+        question: 'What is the most popular dish in Romania',
+        answers: [
+            { text: 'Ciorba de burta (Beef Tripe Soup)', correct: false },
+            { text: 'Mici (Grilled Minced Meat Rolls)', correct: false },
+            { text: 'Sarmale (Cabbage Rolls)', correct: true },
+            { text: 'Mamaliga (Polenta)', correct: false }
+        ]
+    },
+    {
+        question: 'What is the second largest building in the world after the Pentagon, and where is it located?',
+        answers: [
+            {
+                text: 'The Peoples Salvation Cathedral(Catedrala Mântuirii Neamului) - Bucharest ', correct: false
+            },
+            { text: 'Globalworth Tower - Bucharest', correct: false },
+            { text: 'The House of People (Casa Poporului) - Bucharest', correct: true },
+            { text: 'Floreasca City Center Sky Tower - Bucharest', correct: false }
+        ]
+    },
+    {
+        question: 'When did Romania become free from communism?',
+        answers: [
+            { text: '1877', correct: false },
+            { text: '1989', correct: true },
+            { text: '1979', correct: false },
+            { text: '1990', correct: false }
+        ]
+    },
+
 ];

@@ -43,11 +43,13 @@ h1 {
 
 #quiz-introduction {
     text-align: center;
+    margin: 5px 25px 5px 25px;
 }
 
 #answer-btn {
     display: grid;
     font-family: 'Indie Flower', cursive;
+    margin: 10px 35px 10px 35px;
 }
 
 #correct-score {
@@ -66,7 +68,10 @@ h1 {
     background-color: red;
 }
 
-
+/* Questions */
+#questions-quiz {
+    margin: 15px 25px 25px 15px;
+}
 
 
 /* Form username */
@@ -82,12 +87,14 @@ h1 {
     background-color: #762500;
     color: #F1F6F6;
     font-family: 'Short Stack', cursive;
+    margin: 15px;
 }
 
 .btn {
     background-color: #762500;
     color: #F1F6F6;
     font-family: 'Short Stack', cursive;
+    margin: 15px;
 }
 
 .answer {
@@ -108,6 +115,7 @@ h1 {
     /* Form username */
     #namefield {
         width: 90%;
+        margin: 5px;
     }
 
     /* Buttons style */
@@ -143,6 +151,7 @@ h1 {
     /* Form username */
     #namefield {
         width: 60%;
+        margin: 10px;
     }
 
     /* Buttons style */
@@ -180,6 +189,7 @@ h1 {
     /* Form username */
     #namefield {
         width: 55%;
+        margin: 15px;
     }
 
 
@@ -190,6 +200,7 @@ h1 {
         font-size: 25px;
         font-weight: 700;
         animation: 2.5s anim-lineUp ease-out;
+        margin-top: 5px;
     }
 
     #start-btn,
