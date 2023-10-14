@@ -17,10 +17,7 @@ h1 {
     color: #F5F7F3;
     text-align: center;
     font-family: 'MedievalSharp', cursive;
-    font-size: 2em;
     text-transform: uppercase;
-
-
 }
 
 .quiz-body {
@@ -68,6 +65,12 @@ h1 {
     background-color: red;
 }
 
+/* Score Area */
+
+.score-area {
+    font-weight: 600;
+}
+
 /* Questions */
 #questions-quiz {
     margin: 15px 25px 25px 15px;
@@ -106,6 +109,15 @@ h1 {
 
 @media only screen and (max-width: 412px) {
 
+    /* Quiz Title */
+    #gif {
+        display: none;
+    }
+
+    h1 {
+        font-size: 1.3em;
+    }
+
     /* Quiz Body  */
     .quiz-body {
         width: 100%;
@@ -141,6 +153,15 @@ h1 {
 
 
 @media only screen and (min-width: 412px) {
+
+    /* Quiz Title */
+    #gif {
+        display: none;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
 
     /* Quiz Body  */
     .quiz-body {
@@ -179,8 +200,17 @@ h1 {
 }
 
 @media only screen and (min-width: 768px) {
-    /* Quiz Body  */
 
+    /* Quiz Title */
+    #gif {
+        display: inline;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    /* Quiz Body  */
     .quiz-body {
         width: 70%;
         font-size: 2.5em;
@@ -194,8 +224,6 @@ h1 {
 
 
     /* Buttons style */
-
-
     .answer {
         font-size: 25px;
         font-weight: 700;

@@ -73,7 +73,7 @@ function startQuiz() {
     questionContainer.classList.remove('hide');
     quizIntroduction.classList.add('hide');
     //shuffled - function from Web Dev Simplified
-    shuffledQuestions = questions.sort(() => Math.random() - .5).slice(0);
+    shuffledQuestions = questions.sort(() => Math.random() - .5).slice(0, 10);
     currentQuestionIndex = 0;
     setNextQuestion();
 }
@@ -165,9 +165,9 @@ function incrementWrongAnswer() {
 
 // Function Show Question number
 function quizCounter() {
-    const totalQuestions = questions.length;
+    const totalQuestions = questions.length; // If you want to show all the questions of the quiz
     displayedQuestionNumber = currentQuestionIndex + 1;
-    currentQuestionNumber.textContent = `Question ${displayedQuestionNumber} of ${totalQuestions}`;
+    currentQuestionNumber.textContent = `Question ${displayedQuestionNumber} of 10`; // Use ${totalQuestions} if you want to show all the quiz question (20 questions)
 
 }
 // to add comment 
@@ -303,7 +303,7 @@ const questions = [
         ]
     },
     {
-        question: 'The fabled Count Dracula portrayed in Bram Stokers famous tale is actually based on a Romanian ruler.His name was: ',
+        question: 'The fabled Count Dracula portrayed in Bram Stokers famous tale is actually based on a Romanian ruler. His name was: ',
         answers: [
             { text: 'Mircea Cel Mare', correct: false },
             { text: 'Vlad Tepes', correct: true },
@@ -311,6 +311,7 @@ const questions = [
             { text: 'Alexandru Cel Bun', correct: false }
         ]
     },
+
     {
         question: 'In which Castle from Romania was Wednesday filmed?',
         answers: [
