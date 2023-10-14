@@ -1,89 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Quiz about the country Romania. General Romania Quiz." />
+    <meta
+      name="description"
+      content="Quiz about the country Romania. General Romania Quiz."
+    />
     <meta name="keywords" content="quiz, Romania, general quiz about Romania" />
     <link rel="icon" type="image/png" href="assets/images/romaniamap.jpg" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Dracu Quiz</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <!-- Body of the Quiz -->
     <div class="quiz-body">
-        <div id="quiz-header">
-            <!-- Title of the Quiz -->
-            <h1 class="main-tile">Dracu Quiz - Romania General Knowledge           
-            </h1>
-            <img id="gif" src="assets/images/romaniaflag.gif" alt="Romania flag whcih contain the colors red, yellow and blue"
-                style="width: 350px; height: 200px;">
-            <p id="quiz-introduction">Let's test your knowledge about Romania, the home of Count Dracula. Please read
-                the
-                instructions below. Good luck and have fun!</p>
-
-            <!-- Introduction to the Quiz -->
-            <button id="quiz-rules" class="btn">Quiz Instruction</button>
-            <div id="quiz-instruction" class="hide">
-                <h2>Instruction</h2>
-                <ol>
-                    <li>Once you start, you must finish!</li>
-                    <li>Do NOT leave the current browser window or tab.</li>
-                    <li>Do NOT reload the page after starting your assessment.</li>
-                    <li>There are 10 questions. Once you click on the answer, the correct answer will turn green and the incorrect answer red.
-                    <li>Need to answer to all question to finish the Quiz.</li>
-                    </li>
-                </ol>
-                <button id="close-rules" class="btn">Close Instruction</button>
-            </div>
-            <!-- Username -->
-            <div>
-                <form id="form-username">
-                    <label for="name-username">Enter your name:</label><br>
-                    <input type="text" id="namefield" name="fname"><br>
-                    <button type="submit" id="submit" class="btn">Submit</button>
-                </form>
-                    <p id="username-rule" class="hide"></p>                                 
-            </div>
+      <div id="quiz-header">
+        <!-- Title of the Quiz -->
+        <h1 class="main-tile">Dracu Quiz - Romania General Knowledge</h1>
+        <!-- Tile image GIF -->
+        <img
+          id="gif"
+          src="assets/images/romaniaflag.gif"
+          alt="Romania flag whcih contain the colors red, yellow and blue"
+          style="width: 350px; height: 200px"
+        />
+        <!-- Introduction of the Quiz -->
+        <p id="quiz-introduction">
+          Let's test your knowledge about Romania, the birthplace of Count
+          Dracula. Please read the instructions below, enter your username,
+          submit it, and begin the quiz. Good luck and have fun!
+        </p>
+        <!-- Rules for Quiz -->
+        <button id="quiz-rules" class="btn">Quiz Instruction</button>
+        <div id="quiz-instruction" class="hide">
+          <h2>Instruction</h2>
+          <p>
+            The following are some important instructions that you should keep
+            in mind while taking the assessment:
+          </p>
+          <ol>
+            <li>Once you start the assessment, make sure you complete it.</li>
+            <li>
+              Do not switch to another browser window or tab while taking the
+              assessment.
+            </li>
+            <li>Do not refresh the page during the assessment.</li>
+            <li>
+              There are 10 questions in the assessment. Once you select an
+              answer, the correct answer will be highlighted in green and the
+              incorrect answer in red.
+            </li>
+            <li>
+              You must answer all the questions to finish the assessment. Every
+              question carries a point.
+            </li>
+            <li>
+              After answering the final question, the quiz will redirect to the
+              end of the assessment with a 6-second delay to allow for review of
+              the last answer.
+            </li>
+          </ol>
+          <!-- Close rules button -->
+          <button id="close-rules" class="btn">Close Instruction</button>
         </div>
-
-        <!-- Start button-->
-        <div id="output"></div>
+        <!-- Username -->
         <div>
-            <button id="start-btn" class="hide">Start the Quiz</button>
+          <form id="form-username">
+            <label for="namefield">Enter your name:</label><br />
+            <input
+              type="text"
+              id="namefield"
+              name="fname"
+              placeholder="Type your username"
+            /><br />
+            <button type="submit" id="submit" class="btn">Submit</button>
+          </form>
+          <p id="username-rule" class="hide"></p>
         </div>
-        <!-- Question-->
-        <div class="quiz-area">
-            <div id="question-container" class="hide">
+      </div>
 
-                <!-- Answer buttons-->
-                <div id="questions-quiz">Questions</div>
-                <div id="answer-btn">
-                    <button class="answer">Answer1 </button>
-                    <button class="answer">Answer2</button>
-                    <button class="answer">Answer3</button>
-                    <button class="answer">Answer4</button>
-                </div>
-
-                <!--Controls-->
-                <div>
-                    <button id="next-btn">Next</button>
-                </div>
-                <div class="score-area" id="for-final-score">
-                    <p class="score">Correct Answers <span id="correct-score">0</span></p>
-                    <p class="score">Incorrect Answers <span id="incorrect-score">0</span></p>
-                    <p id="question-number">Question 1 of 10</p>
-                </div>
-                <div>
-                    <p id="final-score" class="hide"></p>
-                    <button id="restart" class="hide">Restart Quiz</button>
-                </div>
-            </div>
+      <!-- Start quiz button-->
+      <div id="output"></div>
+      <div>
+        <button id="start-btn" class="hide">Start the Quiz</button>
+      </div>
+      <!-- Question-->
+      <div class="quiz-area">
+        <div id="question-container" class="hide">
+          <!-- Answer buttons-->
+          <div id="questions-quiz">Questions</div>
+          <div id="answer-btn">
+            <button class="answer">Answer1</button>
+            <button class="answer">Answer2</button>
+            <button class="answer">Answer3</button>
+            <button class="answer">Answer4</button>
+          </div>
+          <!--Next button for changing the question-->
+          <div>
+            <button id="next-btn">Next</button>
+          </div>
+          <!-- Score area -->
+          <div class="score-area" id="for-final-score">
+            <p class="score">
+              Correct Answers <span id="correct-score">0</span>
+            </p>
+            <p class="score">
+              Incorrect Answers <span id="incorrect-score">0</span>
+            </p>
+            <!-- Showing the current qustion number -->
+            <p id="question-number">Question 1 of 10</p>
+          </div>
+          <div>
+            <p id="final-score" class="hide"></p>
+            <!-- Restart button -->
+            <button id="restart" class="hide">Restart Quiz</button>
+          </div>
         </div>
+      </div>
     </div>
     <script src="assets/js/script.js"></script>
-</body>
-
+    <footer></footer>
+  </body>
 </html>
