@@ -73,7 +73,7 @@ function startQuiz() {
     questionContainer.classList.remove('hide');
     quizIntroduction.classList.add('hide');
     //shuffled - function from Web Dev Simplified
-    shuffledQuestions = questions.sort(() => Math.random() - .5);
+    shuffledQuestions = questions.sort(() => Math.random() - .5).slice(0);
     currentQuestionIndex = 0;
     setNextQuestion();
 }
@@ -296,19 +296,19 @@ const questions = [
     {
         question: 'To which of these is the Romanian language closest?',
         answers: [
-            { text: '', correct: false },
-            { text: '', correct: false },
-            { text: '', correct: true },
-            { text: '', correct: false }
+            { text: 'Latin', correct: true },
+            { text: 'Ukrainian', correct: false },
+            { text: 'Turkish', correct: false },
+            { text: 'Greek', correct: false }
         ]
     },
     {
         question: 'The fabled Count Dracula portrayed in Bram Stokers famous tale is actually based on a Romanian ruler.His name was: ',
         answers: [
-            { text: '', correct: false },
-            { text: '', correct: false },
-            { text: '', correct: true },
-            { text: '', correct: false }
+            { text: 'Mircea Cel Mare', correct: false },
+            { text: 'Vlad Tepes', correct: true },
+            { text: 'Ioan Voda', correct: false },
+            { text: 'Alexandru Cel Bun', correct: false }
         ]
     },
     {
@@ -368,9 +368,7 @@ const questions = [
     {
         question: 'What is the second largest building in the world after the Pentagon, and where is it located?',
         answers: [
-            {
-                text: 'The Peoples Salvation Cathedral(Catedrala Mântuirii Neamului) - Bucharest ', correct: false
-            },
+            { text: 'The Peoples Salvation Cathedral(Catedrala Mântuirii Neamului) - Bucharest ', correct: false },
             { text: 'Globalworth Tower - Bucharest', correct: false },
             { text: 'The House of People (Casa Poporului) - Bucharest', correct: true },
             { text: 'Floreasca City Center Sky Tower - Bucharest', correct: false }
