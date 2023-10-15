@@ -1,5 +1,5 @@
 /* Import from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=MedievalSharp&family=Permanent+Marker&family=Short+Stack&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=MedievalSharp&family=Roboto&family=Short+Stack&display=swap');
 
 /*  Style the body of the website  */
 body {
@@ -10,14 +10,16 @@ body {
     background-size: cover;
     min-height: 100vh;
     text-align: center;
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Indie Flower', cursive, 'Roboto',
+        sans-serif;
 }
 
-/* The elements of the quiz title and body   */
+/* The elements of the quiz title and body */
 h1 {
     color: #F5F7F3;
     text-align: center;
-    font-family: 'MedievalSharp', cursive;
+    font-family: 'MedievalSharp', cursive, 'Roboto',
+        sans-serif;
     text-transform: uppercase;
 }
 
@@ -29,30 +31,23 @@ h1 {
     border-radius: 40px;
 }
 
-/* Class hide for Javascript   */
-.hide {
-    display: none;
-}
-
 #quiz-introduction {
     text-align: center;
     margin: 5px 25px 5px 25px;
 }
 
-#answer-btn {
-    display: grid;
-    font-family: 'Indie Flower', cursive;
-    margin: 10px 35px 10px 35px;
+/* Form username */
+#namefield {
+    text-align: center;
 }
 
-#correct-score {
-    color: green;
+/* Class hide for Javascript */
+.hide {
+    display: none;
 }
 
-#incorrect-score {
-    color: red;
-}
-
+/* Quiz score area  */
+/* Correct answer will turn background color green and incorrect answer will turn background red */
 .correct {
     background-color: green;
 }
@@ -61,25 +56,25 @@ h1 {
     background-color: red;
 }
 
-/* Score Area */
+/* Score increment colors */
+#correct-score {
+    color: green;
+}
+
+#incorrect-score {
+    color: red;
+}
 
 .score-area {
     font-weight: 600;
 }
 
-/* Questions */
+/* Questions of the Quiz*/
 #questions-quiz {
     margin: 15px 25px 25px 15px;
 }
 
-
-/* Form username */
-#namefield {
-    text-align: center;
-}
-
 /* Button Style */
-
 #start-btn,
 #next-btn,
 #restart {
@@ -92,19 +87,28 @@ h1 {
 .btn {
     background-color: #762500;
     color: #F1F6F6;
-    font-family: 'Short Stack', cursive;
+    font-family: 'Short Stack', cursive, 'Roboto',
+        sans-serif;
     margin: 15px;
 }
 
+/* Button for answering to the quiz */
 .answer {
     border-radius: 10px/20px;
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Indie Flower', cursive, 'Roboto',
+        sans-serif;
     font-weight: 700;
     color: black
 }
 
-@media only screen and (max-width: 412px) {
+/* Quiz answers (id) */
+#answer-btn {
+    display: grid;
+    margin: 10px 35px 10px 35px;
+}
 
+/* Small screen style*/
+@media only screen and (max-width: 412px) {
 
     /* Quiz Title */
     #gif {
@@ -153,10 +157,9 @@ h1 {
         display: block;
         margin: auto;
     }
-
 }
 
-
+/* Medium screen style*/
 @media only screen and (min-width: 412px) {
 
     /* Quiz Title */
@@ -190,7 +193,6 @@ h1 {
     .answer {
         font-size: 22px;
         font-weight: 600;
-
     }
 
     #start-btn,
@@ -205,17 +207,14 @@ h1 {
         border-radius: 15px 50px;
         font-size: 20px;
     }
-
-
-
 }
 
+/* Large screen style */
 @media only screen and (min-width: 768px) {
 
     /*  Style the body of the website  */
     body {
-        margin: 50px;
-
+        margin: 40px;
     }
 
     /* Quiz Title */
@@ -233,18 +232,18 @@ h1 {
         list-style-position: inside;
     }
 
-    /* Quiz Body  */
+    /* Quiz Body */
     .quiz-body {
-        width: 70%;
+        width: 65%;
         font-size: 2.5em;
     }
 
     /* Form username */
     #namefield {
         width: auto;
-        margin: 15px;
+        display: block;
+        margin: auto;
     }
-
 
     /* Buttons style */
     .answer {
@@ -259,7 +258,7 @@ h1 {
     #restart,
     #namefield {
         border-radius: 15px 50px;
-        font-size: 35px;
+        font-size: 30px;
     }
 
     .btn {
@@ -267,6 +266,7 @@ h1 {
         font-size: 35px;
     }
 
+    /* Add effects active and hover to the quiz buttons */
     .btn:hover {
         background-color: #315D44;
     }
@@ -291,7 +291,7 @@ h1 {
         transform: translateY(4px);
     }
 
-    /* Code to show the questions and answers line up*/
+    /* Code to show the questions and answers line up - code from alvarotrigo.com */
     @keyframes anim-lineUp {
         0% {
             opacity: 0;
