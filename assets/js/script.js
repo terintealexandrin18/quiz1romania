@@ -71,7 +71,7 @@ function startQuiz() {
     questionContainer.classList.remove('hide');
     quizIntroduction.classList.add('hide');
     //shuffled - function from Web Dev Simplified
-    shuffledQuestions = questions.sort(() => Math.random() - .5).slice(0, 10);
+    shuffledQuestions = questions.sort(() => Math.random() - 0.5).slice(0, 10);
     currentQuestionIndex = 0;
     setNextQuestion();
 }
@@ -179,8 +179,8 @@ function incrementWrongAnswer() {
 
 // Function Show Question number
 function quizCounter() {
-    const totalQuestions = questions.length; // If you want to show all the questions of the quiz.
-    displayedQuestionNumber = currentQuestionIndex + 1;
+    //Use const totalQuestions = questions.length; If you want to show all the questions of the quiz.
+    const displayedQuestionNumber = currentQuestionIndex + 1;
     currentQuestionNumber.textContent = `Question ${displayedQuestionNumber} of 10`; // Use ${totalQuestions} if you want to show all the quiz question (20 questions).
 }
 
