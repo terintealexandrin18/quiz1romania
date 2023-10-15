@@ -1,6 +1,7 @@
 /* Import from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=MedievalSharp&family=Permanent+Marker&family=Short+Stack&display=swap');
 
+/*  Style the body of the website  */
 body {
     background-color: lightgray;
     background-image: url("../images/romaniacastel.jpg");
@@ -13,6 +14,7 @@ body {
     font-family: 'Indie Flower', cursive;
 }
 
+/* The elements of the quiz title and body   */
 h1 {
     color: #F5F7F3;
     text-align: center;
@@ -20,25 +22,21 @@ h1 {
     text-transform: uppercase;
 }
 
-
-
 .quiz-body {
     background-color: #e16f00db;
     margin: auto;
     padding: 2px;
-    width: 60%;
     box-shadow: inset 0px 0px 120px #f1f6f6;
     border-radius: 40px;
 }
 
+/* Class hide for Javascript   */
 .hide {
     display: none;
 }
 
-#quiz-instruction {
-    text-align: center;
-    list-style-position: inside;
-}
+
+
 
 #quiz-introduction {
     text-align: center;
@@ -120,6 +118,12 @@ h1 {
         font-size: 1.3em;
     }
 
+    /* Quiz Instruction */
+    #quiz-instruction {
+        text-align: left;
+        margin: 7px;
+    }
+
     /* Quiz Body  */
     .quiz-body {
         width: 100%;
@@ -128,7 +132,7 @@ h1 {
 
     /* Form username */
     #namefield {
-        width: 90%;
+        width: 85%;
         margin: 5px;
     }
 
@@ -163,6 +167,12 @@ h1 {
 
     h1 {
         font-size: 1.5em;
+    }
+
+    /* Quiz Instruction */
+    #quiz-instruction {
+        text-align: center;
+        list-style-position: inside;
     }
 
     /* Quiz Body  */
@@ -210,6 +220,12 @@ h1 {
 
     h1 {
         font-size: 2em;
+    }
+
+    /* Quiz Instruction */
+    #quiz-instruction {
+        text-align: center;
+        list-style-position: inside;
     }
 
     /* Quiz Body  */
