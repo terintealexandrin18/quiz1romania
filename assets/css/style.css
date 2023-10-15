@@ -103,8 +103,8 @@ h1 {
 .answer {
     border-radius: 10px/20px;
     font-family: 'Indie Flower', cursive;
-    font-size: 25px;
     font-weight: 700;
+    color: black
 }
 
 @media only screen and (max-width: 412px) {
