@@ -1,4 +1,3 @@
-
 // Variable
 const start = document.getElementById('start-btn');
 const rules = document.getElementById('quiz-rules');
@@ -19,14 +18,16 @@ let hasAnswered = false;
 let quizScore = document.getElementById('final-score');
 let score = 0;
 
-//event listeners 
+//Event listeners 
 rules.addEventListener('click', showRules);
 noRules.addEventListener('click', hideRules);
 start.addEventListener('click', startQuiz);
 restartBtn.addEventListener('click', restartQuiz);
 
-
-// function from Web Dev Simplified
+/* 
+Function to increment the current question
+Function from Web Dev Simplified
+*/
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++;
     setNextQuestion();
@@ -42,20 +43,19 @@ function hideRules() {
     document.getElementById('quiz-instruction').style.display = 'none';
 }
 
-// Function for username
+// Function for Username
 const output = document.getElementById('output');
 formUsername.addEventListener('submit', function (event) {
     event.preventDefault();
     var usernameInput = document.getElementById('namefield');
     var username = usernameInput.value.trim(); // Trim removes the blank/empty spaces
-    output.innerHTML = `${username}: please press the button below to begin the quiz.`;
+    output.innerHTML = `${username}: please press the button below to begin the quiz.`; // The username will show when the user begins the quiz.
     start.classList.remove('hide');
     formUsername.classList.add('hide');
     rulesForUsername.classList.add('hide');
     outputUsername.classList.remove('hide');
-    if (username === '') {
-
-        event.preventDefault(); // Prevent the form from submitting
+    if (username === '') { //Function is designed to prevent the submission of usernames that are empty or blank
+        event.preventDefault(); // Prevent the form from default submitting
         rulesForUsername.classList.remove('hide');
         start.classList.add('hide');
         document.getElementById('username-rule').innerHTML = `It appears that the username field is currently blank. Kindly type in a username to proceed.`;
@@ -64,9 +64,7 @@ formUsername.addEventListener('submit', function (event) {
     }
 });
 
-
-
-// Function start the quiz
+// Function to Start the quiz
 function startQuiz() {
     outputUsername.classList.add('hide');
     start.classList.add('hide');
@@ -77,15 +75,18 @@ function startQuiz() {
     currentQuestionIndex = 0;
     setNextQuestion();
 }
-//Function set the nex question
+//Function set the next question
 function setNextQuestion() {
     // function from Web Dev Simplified
     resetState();
     appearQuestion(shuffledQuestions[currentQuestionIndex]);
-    quizCounter(); // Update the displayed question number
+    quizCounter(); // Update the displayed question number. I have added the function.
 
 }
-// function from Web Dev Simplified
+/* 
+Function to show the qustion.It takes the question and answer from array
+Function from Web Dev Simplified
+*/
 function appearQuestion(question) {
     questionQuiz.innerText = question.question;
     question.answers.forEach(answer => {
@@ -99,7 +100,10 @@ function appearQuestion(question) {
         answerButton.appendChild(button);
     });
 }
-// function from Web Dev Simplified
+/* 
+Function to replace an old answer with a new answer for a new question
+Function from Web Dev Simplified
+*/
 function resetState() {
     clearStatusClass(document.body);
     nextButton.classList.add('hide');
@@ -109,7 +113,10 @@ function resetState() {
     }
 }
 
-// function from Web Dev Simplified
+/* 
+Function that checks the answer and increments the correct or wrong answer accordingly
+Function from Web Dev Simplified
+*/
 function selectAnswer(event) {
     const clickAnswer = event.target;
     const correct = clickAnswer.dataset.correct;
@@ -117,14 +124,12 @@ function selectAnswer(event) {
     if (correct) score++;
     Array.from(answerButton.children).forEach(button => {
         setStatusClass(button, button.dataset.correct);
-        button.removeEventListener('click', selectAnswer); // Increment the score once even if click multiple times.
+        button.removeEventListener('click', selectAnswer); // Increment the score once even if click multiple times. I have added the function.
     });
-
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide');
     } else {
-
-        setTimeout(finishQuiz, 6000); // Add time for the user to check the last answers.
+        setTimeout(finishQuiz, 6000); // Add time for the user to check the last answers. I have added the function.
     }
     if (correct) {
         incrementCorrectScore();
@@ -133,8 +138,11 @@ function selectAnswer(event) {
     }
     hasAnswered = true;
 }
-// function from Web Dev Simplified
 
+/* 
+Function to set the status of the answer correct or wrong
+Function from Web Dev Simplified
+*/
 function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
@@ -144,20 +152,26 @@ function setStatusClass(element, correct) {
     }
 }
 
+/* 
+Function to reset the answer correct / wrong
+Function from Web Dev Simplified
+*/
 function clearStatusClass(element) {
     element.classList.remove('correct');
     element.classList.remove('wrong');
 }
 
-//Function Increment Correct Score - Code from CodeInstitute 
-//Score from the current DOM and Increments it by 1
-
+/* 
+Function Increment Correct / Incorrect Score 
+Function from CodeInstitute - Love Math Project
+Score from the current DOM and Increments it by 1
+*/
 function incrementCorrectScore() {
     let oldScore = parseInt(document.getElementById('correct-score').innerText);
     document.getElementById('correct-score').innerText = ++oldScore;
 }
 
-//Function Increment Incorrect Score - Code from CodeInstitute;
+//Function Increment Incorrect Score
 function incrementWrongAnswer() {
     let oldScore = parseInt(document.getElementById('incorrect-score').innerText);
     document.getElementById('incorrect-score').innerText = oldScore + 1;
@@ -165,12 +179,12 @@ function incrementWrongAnswer() {
 
 // Function Show Question number
 function quizCounter() {
-    const totalQuestions = questions.length; // If you want to show all the questions of the quiz
+    const totalQuestions = questions.length; // If you want to show all the questions of the quiz.
     displayedQuestionNumber = currentQuestionIndex + 1;
-    currentQuestionNumber.textContent = `Question ${displayedQuestionNumber} of 10`; // Use ${totalQuestions} if you want to show all the quiz question (20 questions)
-
+    currentQuestionNumber.textContent = `Question ${displayedQuestionNumber} of 10`; // Use ${totalQuestions} if you want to show all the quiz question (20 questions).
 }
-// to add comment 
+
+// Function when finish te quiz the user recive a personalised message
 function finishQuiz() {
     quizScore.classList.remove('hide');
     endOfQuiz.classList.add('hide');
@@ -178,10 +192,8 @@ function finishQuiz() {
     answerButton.removeAttribute('id');
     answerButton.classList.add('hide');
     restartBtn.classList.remove('hide');
-    var usernameInput = document.getElementById('namefield');
+    var usernameInput = document.getElementById('namefield'); // The username will appear at the end of the quiz with the customized message.
     var username = usernameInput.value;
-
-
     if (score >= 9) {
         document.getElementById('final-score').innerHTML = `Congratulations! ${username} You have amazing knowledge about Romania. You answered ${score} out of 10 questions correctly.`;
     }
@@ -195,13 +207,13 @@ function finishQuiz() {
         document.getElementById('final-score').innerHTML = `Sorry ${username} You didn't pass the basic Romania Quiz. You answered ${score} out of 10 questions correctly.`;
     }
 }
-//Function Restart 
 
+//Function Restart 
 function restartQuiz() {
     location.reload();
-
 }
 
+//Quiz questions are placed at the end of the quiz to avoid interfering with code writing.
 const questions = [
     {
         question: 'What is the Romanian capital?',
