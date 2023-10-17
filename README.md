@@ -122,7 +122,12 @@ This is an online quiz about Romania. The questions have a moderate difficulty l
 
 - Before completing the project, I identified and resolved the following issues.
   
-|||
+|Issues occurred| Image with the issues|
 |--|--|
 |During the quiz, the buttons for selecting answers were not centered and the text color for iPhone was blue, while there was no issue on Android phones. However, the problem has been fixed by changing the answer text color to black. Additionally, the margins in the quiz body were too large, so I had to reduce them for smaller screens.|![Screenshout of the quiz from Iphone](assets/images/readme/androidvsiphone.png)|
 |On the Android tablet and iPhone, the form placeholder was not visible, whereas on bigger screens and Android phones, this issue did not occur. I had to adjust the form's width to auto.|![Screenshout of the quiz from Android Tablet](assets/images/readme/tablet1.png)
+
+|JavaScript Bugs|Image with the issue|Image with the issue fixed|
+|--|--|--|
+|A leading decimal point can be confused with a dot. The issue has been fixed by adding the decimal "0" to math random.|![Screenshot java script error decimal missing](assets/images/readme/jsvalidation1.png)|![Screenshot java script error adding the decimal missing](assets/images/readme/jsvalidation1fixed.png)|
+|Undefined variable and unused variable. To the undefined variable, "const" was added and the unused variable was commented out in the code.|![Screenshot of java script error with const and unused variable](assets/images/readme/jsvalidation2.png)|![Screenshot of java script with added const and commented the unused var](assets/images/readme/jsvalidation2fixed.png)|
