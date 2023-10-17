@@ -121,5 +121,8 @@ This is an online quiz about Romania. The questions have a moderate difficulty l
 ## 5 Testing
 
 - Before completing the project, I identified and resolved the following issues.
-
-![Screenshout of the quiz from Iphone](assets/images/readme/ios1.jpg)
+  
+|||
+|--|--|
+|During the quiz, the buttons for selecting answers were not centered and the text color for iPhone was blue, while there was no issue on Android phones. However, the problem has been fixed by changing the answer text color to black. Additionally, the margins in the quiz body were too large, so I had to reduce them for smaller screens.|![Screenshout of the quiz from Iphone](assets/images/readme/androidvsiphone.png)|
+|On the Android tablet and iPhone, the form placeholder was not visible, whereas on bigger screens and Android phones, this issue did not occur. I had to adjust the form's width to auto.|![Screenshout of the quiz from Android Tablet](assets/images/readme/tablet1.png)
