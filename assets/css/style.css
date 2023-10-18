@@ -82,6 +82,7 @@ h1 {
     color: #F1F6F6;
     font-family: 'Short Stack', cursive;
     margin: 15px;
+    padding: 10px;
 }
 
 .btn {
@@ -90,6 +91,7 @@ h1 {
     font-family: 'Short Stack', cursive, 'Roboto',
         sans-serif;
     margin: 15px;
+    padding: 10px;
 }
 
 /* Button for answering to the quiz */
@@ -276,7 +278,7 @@ h1 {
 
     .btn {
         border-radius: 15px 50px;
-        font-size: 35px;
+        font-size: 30px;
     }
 
     /* Add effects active and hover to the quiz buttons */

@@ -27,7 +27,6 @@ This is an online quiz about Romania. The questions have a moderate difficulty l
   - Responsiveness
   - Accessibility
   - Compatibility
-  - Tools Testing
   - Manual Testing
 - Function
 - Deployment
@@ -115,11 +114,14 @@ This is an online quiz about Romania. The questions have a moderate difficulty l
 - [CHROME DEV TOOLS](https://developer.chrome.com/docs/devtools/) - Used to review the code, test its responsiveness, and make any necessary adjustments.
 - [W3C MARKUP VALIDATOR](https://validator.w3.org/) - Used to validate the HTML code.
 - [W3C CSS VALIDATOR](https://jigsaw.w3.org/css-validator/) - Used to validate the CSS code.
+- [JSHINT](https://jshint.com/) - Used to validate the JAVASCRIPT code
 - SNIPPING TOOL - Used for screenshot and snipping.
 - PAINT - Used to combine the snipped images.
 
 ## 5 Testing
 
+- The quiz site was tested on various devices including desktop computers, laptops, tablets, and smartphones. The testing was done to ensure that the site was responsive and worked well on different screen sizes and resolutions. Different browsers were also used for testing to ensure cross-browser compatibility. The primary focus of the testing was to identify any bugs or issues with the site's functionality and user experience.
+  
 - Before completing the project, I identified and resolved the following issues.
   
 |Issues occurred| Image with the issues|
@@ -131,3 +133,51 @@ This is an online quiz about Romania. The questions have a moderate difficulty l
 |--|--|--|
 |A leading decimal point can be confused with a dot. The issue has been fixed by adding the decimal "0" to math random.|![Screenshot java script error decimal missing](assets/images/readme/jsvalidation1.png)|![Screenshot java script error adding the decimal missing](assets/images/readme/jsvalidation1fixed.png)|
 |Undefined variable and unused variable. To the undefined variable, "const" was added and the unused variable was commented out in the code.|![Screenshot of java script error with const and unused variable](assets/images/readme/jsvalidation2.png)|![Screenshot of java script with added const and commented the unused var](assets/images/readme/jsvalidation2fixed.png)|
+
+### Code Validation
+
+- The entire website has been validated, and no issues have been found.
+
+|Programming language| Pass/Fail| Result|
+|--|--|--|
+|HTML|✓|![HTML validation screenshot](assets/images/readme/htmlvalidation.png)|
+|CSS|✓|![CSCS validation screenshot](assets/images/readme/cssvalidation.png)|
+|JAVASCRIPT|✓|![JAVASCRIPT validation screenshot](assets/images/readme/jsvalidationfinal.png)|
+
+### Accessibility
+
+|Lighthouse in Chrome DevTools.|Score|
+|--|--|
+|Lighthouse Report|![Lighthouse screenshot](assets/images/readme/lighthousereport.png)|
+
+### Compatibility
+
+- Browser Compatibility. The website has been tested on the following browsers:
+
+|Name of the Browser|Compatible ✓ / Incompatible ✕ |
+|--|--|
+|Safari|✓ |
+|Firefox| ✓|
+|Google Chrome|✓ |
+|Interner Explorer| ✓|
+
+Device Compatibility. The website has been tested on the following devices:
+|Name of the Device|Compatible ✓ / Incompatible ✕ |
+|--|--|
+|IPhone 8 Plus|✓ |
+|IPhone 13 Pro Max| ✓|
+|Samsung Galaxy S10 Plus|✓ |
+|Samsung Galaxy S22 Ultra 5G | ✓|
+|Samsung Galaxy Tab A7 | ✓|
+|Microsoft Surface Pro X | ✓|
+
+### Manual Testing
+
+
+
+|The following devices were used to test these elements:| Iphone 8 | Iphone 13 Pro Max | Samsung S10 Plus | Samsung Galaxy S22 Ultra 5G |Samsung Galaxy Tab A7 | Microsoft Surface Pro X |
+| --| -- | -- | --| -- | -- | -- |
+|Buttin  "Quiz Instruction"|✓|✓|✓|✓|✓|✓|
+|Button "Close Instruction"|✓|✓|✓|✓|✓|✓|
+|Button "Submit" without name|✓|✓|✓|✓|✓|✓|
+|Button "Submit" with a name|✓|✓|✓|✓|✓|✓|
