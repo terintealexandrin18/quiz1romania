@@ -23,6 +23,9 @@ This is an online quiz about Romania. The questions have a moderate difficulty l
   - Languages Used
   - Frameworks, Libraries and Programs Used
 - Testing
+  - Bugs
+    - Fixed Bugs
+    - Unfixed bugs
   - Code Validation
   - Responsiveness
   - Accessibility
@@ -120,9 +123,13 @@ This is an online quiz about Romania. The questions have a moderate difficulty l
 
 ## 5 Testing
 
-- The quiz site was tested on various devices including desktop computers, laptops, tablets, and smartphones. The testing was done to ensure that the site was responsive and worked well on different screen sizes and resolutions. Different browsers were also used for testing to ensure cross-browser compatibility. The primary focus of the testing was to identify any bugs or issues with the site's functionality and user experience.
+### Bugs 
+
+- The quiz site was tested on various devices including laptop, tablet, and smartphones. The testing was done to ensure that the site was responsive and worked well on different screen sizes and resolutions. Different browsers were also used for testing to ensure cross-browser compatibility. The primary focus of the testing was to identify any bugs or issues with the site's functionality and user experience.
   
-- Before completing the project, I identified and resolved the following issues.
+#### Fixed Bugs
+
+  - Before completing the project, I identified and resolved the following issues.
   
 |Issues occurred| Image with the issues|
 |--|--|
@@ -133,6 +140,10 @@ This is an online quiz about Romania. The questions have a moderate difficulty l
 |--|--|--|
 |A leading decimal point can be confused with a dot. The issue has been fixed by adding the decimal "0" to math random.|![Screenshot java script error decimal missing](assets/images/readme/jsvalidation1.png)|![Screenshot java script error adding the decimal missing](assets/images/readme/jsvalidation1fixed.png)|
 |Undefined variable and unused variable. To the undefined variable, "const" was added and the unused variable was commented out in the code.|![Screenshot of java script error with const and unused variable](assets/images/readme/jsvalidation2.png)|![Screenshot of java script with added const and commented the unused var](assets/images/readme/jsvalidation2fixed.png)|
+
+#### Unfixed bugs
+
+  - No unfixed Bugs.
 
 ### Code Validation
 
@@ -171,13 +182,33 @@ Device Compatibility. The website has been tested on the following devices:
 |Samsung Galaxy Tab A7 | ✓|
 |Microsoft Surface Pro X | ✓|
 
-### Manual Testing
-
-
+### Manual Testing 
+ 
+ Signs for pass the test: ✓
+ Sign for failed the test: ✕
 
 |The following devices were used to test these elements:| Iphone 8 | Iphone 13 Pro Max | Samsung S10 Plus | Samsung Galaxy S22 Ultra 5G |Samsung Galaxy Tab A7 | Microsoft Surface Pro X |
 | --| -- | -- | --| -- | -- | -- |
-|Buttin  "Quiz Instruction"|✓|✓|✓|✓|✓|✓|
+|Buttn  "Quiz Instruction"|✓|✓|✓|✓|✓|✓|
 |Button "Close Instruction"|✓|✓|✓|✓|✓|✓|
-|Button "Submit" without name|✓|✓|✓|✓|✓|✓|
-|Button "Submit" with a name|✓|✓|✓|✓|✓|✓|
+|Button "Submit" without a name - Error message showing |✓|✓|✓|✓|✓|✓|
+|Button "Submit" with a name - Error message disappears|✓|✓|✓|✓|✓|✓|
+|Username apears with the button "Start"|✓|✓|✓|✓|✓|✓|
+|Questions Visible|✓|✓|✓|✓|✓|✓|
+|Animation for showing the questions - large screens only| N/A|N/A|N/A|N/A|✓|✓|
+|All four answer buttons visible|✓|✓|✓|✓|✓|✓|
+|Showing the qustion number|✓|✓|✓|✓|✓|✓|
+|Button "Next" changing the questions and rest the answers button background color|✓|✓|✓|✓|✓|✓|
+|Incrementing correct/incorrect answers|✓|✓|✓|✓|✓|✓|
+|The correct answer button background turns green and the incorrect answers background will turn red|✓|✓|✓|✓|✓|✓|
+|After answering the last question, a customized message will appear after 6 seconds|✓|✓|✓|✓|✓|✓|
+|Username is included in the customized message|✓|✓|✓|✓|✓|✓|
+|For scores of 9 and 10 points, the message "You have amazing knowledge..." will be displayed|✓|✓|✓|✓|✓|✓|
+For scores of 7 and 8 points, the message "You have good knowledge..." will be displayed|✓|✓|✓|✓|✓|✓|
+For scores of 5 and 6 points, the message "You have basic knowledge..." will be displayed|✓|✓|✓|✓|✓|✓|
+For scores of 0 and 4 points, the message "You didn't pass the basic..." will be displayed|✓|✓|✓|✓|✓|✓|
+|Button "Restart"|✓|✓|✓|✓|✓|✓|
+
+
+## Function
+
